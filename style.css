@@ -7,59 +7,30 @@
   padding: 0;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
 html {
   box-sizing: border-box;
-  font-size: 62.5%;
   scroll-behaviour: smooth;
 }
 
-/* 1200px / 16px = 75em */
-@media (max-width: 75em) {
-  html {
-    font-size: 60%;
-  }
-}
-
-/* 980px / 16px = 61.25em */
-@media (max-width: 61.25em) {
-  html {
-    font-size: 58%;
-  }
-}
-
-/* 460px / 16px = 28.75em */
-@media (max-width: 28.75em) {
-  html {
-    font-size: 55%;
-  }
-}
 body {
   font-family: "Titillium Web";
-  font-size: 1.8rem;
-  font-weight: 400;
+  font-size: 1.5rem;
+  font-weight:400;
   line-height: 1.4;
   background: var(--body-background);
   color: white;
 }
 
-h1, h2 {
+h1 {
   font-family:Arvo;
-  font-weight: 700;
+  font-size: 4.8rem;
   text-align: center;
 }
 
-h1 {
-  font-size: 6rem;
-}
-
 h2 {
-  font-size: 4rem;
+  font-family:Arvo;
+  font-size: 3rem;
+  text-align: center;
 }
 
 ul {
@@ -71,45 +42,44 @@ a {
   color: var(--body-color);
 }
 
-.nav {
+#navbar {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background: hsl(0, 10%, 10%);
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
-  z-index: 10;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.6);
 }
 
 .nav-list {
   display: flex;
-  margin-right: 2rem;
-}
+} 
 
-@media (max-width: 28.75em) {
-  .nav {
-    justify-content: center;
-  }
-
-  .nav-list {
+@media (max-width: 45.625em) {
+   .nav-list {
     margin: 0 1rem;
+  }
+  .nav-list a {
+    font-size: 80%;
+    display: block;
+    padding: 0.7rem;
   }
 }
 
 .nav-list a {
   display: block;
-  font-size: 2.2rem;
-  padding: 2rem;
+  padding: 1.4rem;
 }
 
 .nav-list a:hover {
-  background: gray;
+  color: black;
+  background: hsl(200, 60%, 40%);
 }
 
 
-.welcome-section {
+#welcome-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -119,30 +89,41 @@ a {
   margin-top: 5rem;
 }
 
-.welcome-section h3 {
-  font-size: 3rem;
+#welcome-section h3 {
+  font-size: 2rem;
+  margin-top: 1rem;
   font-weight: 200;
   font-style: italic;
   color: black;
 }
 
-.welcome-section p {
-  font-size: 2rem;
+#welcome-section p {
+  font-size: 1.5rem;
+  margin-top: 1rem;
   font-weight: 200;
   font-style: italic;
   color: white;
 }
 
-@media (max-width: 40.625em) {
-  .welcome-section {
+@media (max-width: 45.625em) {
+  #welcome-section {
 /*     align-items: center; */
     text-align: center;
   }
+  #welcome-section h1{
+    font-size: 100%;
+  }
+  #welcome-section h3{
+    font-size: 70%;
+  }
+  #welcome-section p{
+    font-size: 65%;
+  }
 }
 
-.projects-section {
+#projects {
   text-align: center;
-  padding: 10rem 2rem;
+  padding: 6rem 1.5rem;
   background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
 }
 
@@ -151,25 +132,33 @@ a {
   margin: 0 auto 6rem auto;
 }
 
-@media (max-width: 40.75em) {
+@media (max-width: 45.625em) {
   .projects-section-header {
-    font-size: 4rem;
+    font-size: 80%;
   }
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(620px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   grid-gap: 4rem;
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  margin-bottom: 6rem;
 }
 
-@media (max-width: 40.625em) {
+@media (max-width: 45.625em) {
+  
+  .project h3 {
+    font-size: 60%;
+  }
+  
+  .project li {
+    font-size: 40%;
+  }
+  
   .projects-section {
-    padding: 6rem 1rem;
+    padding: 3rem 1rem;
   }
 
   .projects-grid {
@@ -198,7 +187,7 @@ a {
   border-radius: 2px;
 }
 
-.contact-section {
+#contact {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -206,7 +195,7 @@ a {
   text-align: center;
   width: 100%;
   height: 80vh;
-  padding: 0 2rem;
+  padding: 2rem 2rem;
 }
 
 .contact-section-header h2{
@@ -217,9 +206,12 @@ a {
   font-style: italic;
 }
 
-@media (max-width: 28.75em) {
+@media (max-width: 45.75em) {
   .contact-section-header h2 {
-    font-size: 4rem;
+    font-size: 75%;
+  }
+  .contact-section-header p {
+    font-size: 50%;
   }
 }
 
@@ -240,6 +232,13 @@ a {
   transform: translateX(18px);
 }
 
+@media (max-width: 45.75em) {
+  
+  .contact-details {
+    font-size: 65%;
+  }
+}
+
 footer {
   font-weight: 300;
   display: flex;
@@ -253,9 +252,12 @@ footer p {
   font-size: 2rem;
 }
 
-@media (max-width: 40.75em) {
+@media (max-width: 45.75em) {
   footer {
     flex-direction: column;
     text-align: center;
+  }
+  footer p {
+    font-size: 80%;
   }
 }
